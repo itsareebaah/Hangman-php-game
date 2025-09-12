@@ -139,15 +139,7 @@ Dynamic word database with categories
 
 Mobile app version
 
-📌 Screenshots
 
-Login Page
-
-
-Game Page
-
-
-Stats Page
 
 
 ⚡ License
