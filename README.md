@@ -1,85 +1,112 @@
-🎯 Hangman Game – PHP & JavaScript Version
+# Hangman PHP Game
 
-A modern Hangman Game built with PHP, MySQL, JavaScript, HTML, and CSS featuring user authentication, levels, scoring, and a stylish UI. Track your wins, losses, and compete with yourself!
+A full-stack web-based implementation of the classic Hangman game, built using PHP, MySQL, and JavaScript. The application includes secure user authentication, real-time gameplay interactions, and persistent score tracking.
 
-🖥️ Demo
+---
 
-🚀 Features
+## Overview
 
-User Authentication
+This project extends the traditional Hangman game into a structured web application with user accounts, difficulty levels, and performance tracking. It is designed to demonstrate backend integration, session handling, and interactive frontend logic in a cohesive system.
 
-Secure login & registration with hashed passwords
+---
 
-Session management to protect user data
+## Core Features
 
-Hangman Gameplay
+### Authentication System
 
-Fun and interactive Hangman game
+* Secure user registration and login
+* Password hashing for data protection
+* Session-based authentication and access control
 
-3 difficulty levels: Easy, Intermediate, Hard
+### Gameplay Mechanics
 
-5 lives per game
+* Interactive Hangman game logic implemented in JavaScript
+* Three difficulty levels: Easy, Intermediate, Hard
+* Limited attempts (5 lives per session)
+* Hint system for assisted gameplay
+* Clear win/lose state handling
 
-Hints to guess words
+### Score & Statistics
 
-Winner/Loser messages
+* Persistent tracking of:
 
-Score Tracking
+  * Wins
+  * Losses
+  * Total games played
+* Dedicated statistics dashboard
+* Asynchronous score updates (AJAX) without page reload
 
-Track wins, losses, and total games played
+### User Experience
 
-View your stats in a dedicated stats page
+* Responsive layout for desktop and mobile
+* Clean and modern UI design
+* Smooth interactions and feedback states
 
-Real-time score update without page reload
+---
 
-Modern UI
+## Technology Stack
 
-Glassmorphism design
+**Frontend**
 
-Gradient backgrounds
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
 
-Animated buttons and inputs
+**Backend**
 
-Responsive design for desktop & mobile
+* PHP
 
-📁 Project Structure
-hangman/
+**Database**
+
+* MySQL / MariaDB
+
+**Environment**
+
+* XAMPP / Localhost (or any PHP-supported server)
+
+---
+
+## Project Structure
+
+```bash id="k28s9d"
+hangman-php-game/
 │
 ├── index.php        # Login page
-├── register.php     # Registration page
-├── game.php         # Main Hangman game
-├── stats.php        # Stats page (wins/losses)
-├── logout.php       # Logout script
+├── register.php     # User registration
+├── game.php         # Main game interface
+├── stats.php        # User statistics dashboard
+├── logout.php       # Session termination
 ├── db.php           # Database connection
-├── save_score.php   # AJAX endpoint to update scores
-├── style.css        # Styling for all pages
-├── script.js        # Game logic (JS)
-└── README.md        # Project documentation
+├── save_score.php   # AJAX handler for score updates
+├── style.css        # Global styling
+├── script.js        # Game logic
+└── README.md
+```
 
-🛠️ Technologies Used
+---
 
-Frontend: HTML, CSS, JavaScript
+## Local Setup
 
-Backend: PHP
+### 1. Clone Repository
 
-Database: MySQL / MariaDB
+```bash id="m91xla"
+git clone https://github.com/itsareebaah/hangman-php-game.git
+cd hangman-php-game
+```
 
-Server: XAMPP / Localhost (can be hosted on any PHP-supported server)
+---
 
-💾 Installation & Setup
+### 2. Database Setup
 
-Clone the repository
+Create a database:
 
-git clone https://github.com/itsareebaah/Hangman.git
-cd hangman-game
+```sql id="q2mz8k"
+CREATE DATABASE hangman_db;
+```
 
+Create table:
 
-Setup Database
-
-Open phpMyAdmin and create a database hangman_db
-
-Run the SQL script:
-
+```sql id="j3sk92"
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -87,61 +114,83 @@ CREATE TABLE users (
     wins INT DEFAULT 0,
     losses INT DEFAULT 0
 );
+```
 
+---
 
-Configure Database Connection
+### 3. Configure Database
 
-Open db.php and update credentials:
+Update credentials in `db.php`:
 
+```php id="t82ls9"
 $host = "localhost";
-$user = "root"; // your DB username
-$pass = "";     // your DB password
+$user = "root";
+$pass = "";
 $dbname = "hangman_db";
+```
 
+---
 
-Run on Localhost
+### 4. Run Application
 
-Copy the project to htdocs (if using XAMPP)
+* Place project in `htdocs` (XAMPP)
+* Start Apache & MySQL
+* Open in browser:
 
-Open browser: http://localhost/hangman
+```
+http://localhost/hangman-php-game
+```
 
-🎮 How to Play
+---
 
-Register or Login
+## Gameplay Flow
 
-Choose a difficulty level: Easy / Intermediate / Hard
+1. Register or log in to your account
+2. Select difficulty level
+3. Guess letters to reveal the hidden word
+4. Each incorrect guess reduces remaining lives
+5. Game ends on win or when all lives are lost
+6. Results are stored and reflected in the statistics dashboard
 
-Guess letters to uncover the word
+---
 
-5 lives only – Wrong guesses reduce lives
+## What This Project Demonstrates
 
-Win or Lose messages appear
+* Full-stack development using PHP and JavaScript
+* Secure authentication and session management
+* Client-server communication using AJAX
+* State management for interactive applications
+* Database design and integration
 
-Check your stats in the Stats page
+---
 
-🔑 Features for Users
+## Limitations
 
-Personalized experience with username greeting
+* Single-player only
+* Static word dataset
+* No leaderboard or ranking system
+* No API-based word generation
 
-Track Wins / Losses / Total Games / Win Rate
+---
 
-Stylish UI with animations and gradient design
+## Future Improvements
 
-Option to Play Again or Logout anytime
+* Global leaderboard and ranking system
+* Multiplayer or competitive mode
+* Dynamic word API with categories
+* Progressive difficulty scaling
+* UI enhancements and animations
 
-📝 Future Enhancements
+---
 
-Leaderboard for top players
+## License
 
-Multiplayer mode
+This project is licensed under the MIT License.
 
-Dynamic word database with categories
+---
 
-Mobile app version
+## Author
 
-
-
-
-⚡ License
-
-This project is open-source under the MIT License. Feel free to use, modify, and share.
+Areeba Ahmad
+## Live Demo 
+[Live Demo](https://hangmangame.xo.je/?i=1)
